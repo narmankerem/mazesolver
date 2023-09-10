@@ -1,0 +1,11 @@
+<launch>
+  <!-- Start the robot driver node -->
+  <node name="maze_solver_node" pkg="robotcraft2023_driver_g4" type="maze_solver_node" output="screen" />
+
+  <!-- Load the robot description and display it in RViz -->
+  <include file="$(find robotcraft_robot_description)/launch/display_robotcraft.launch" />
+
+  <!-- Start the rosserial communication with Arduino -->
+  <include file="$(find robotcraft2023_driver_g4)/launch/robot_firmware.launch" />
+</launch>
+

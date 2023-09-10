@@ -1,0 +1,14 @@
+<launch>
+    <!-- Launch the robot firmware -->
+    <include file="$(find robotcraft2023_driver_g4)/launch/robot_firmware.launch" />
+
+    <!-- Launch the robot driver -->
+    <include file="$(find robotcraft2023_driver_g4)/launch/robot_driver.launch" />
+        <arg name="my_node" value="my_robot_driver_node" />
+
+    <!-- Launch RViz with saved configuration -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find robotcraft2023_driver_g4)/config/rviz_config.rviz" />
+
+    <!-- You can add other nodes or configurations here if needed -->
+</launch>
+
